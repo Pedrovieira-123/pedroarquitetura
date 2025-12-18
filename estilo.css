@@ -1,10 +1,11 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-:root{
+
+:root {
     --preto: #000000;
     --branco: #FFFFFF;
     --ferrugem: #B7410E;
@@ -12,240 +13,1041 @@
     --fonte-titulo: "Geologica", sans-serif;
     --fonte-texto: "Inter", sans-serif;
     --fonte-texto1: "Montserrat", sans-serif;
-
 }
-body{
+
+body {
     font-family: var(--fonte-texto);
 }
-.container{
-    max-width:100%;
-    margin:0 auto;
-}
- 
-    
 
-#topo{
-    min-height: 600px;
-    padding: 20px 10px;
-    background-image: linear-gradient( var(--preto), var(--cinza-escuro) );
-}
-#topo1{
-        min-height: 300px;
-        padding: 20px 10px;
-        background-image: linear-gradient( var(--preto), var(--cinza-escuro) );
-}
-.grid-topo{
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-#menu-topo{
-    grid-column:2/4;
+img {
+    max-width: 100%;
+    height: auto;
 }
-.grid-topo > h2{
-  grid-column: 1/3; 
-  text-align: center;
-  font-family: var(--fonte-titulo);
-  font-size: 5.8rem;
-  font-weight: 900;
-  color: var(--branco);
-  line-height: 100%;
-  text-shadow: 4px 8px 10px #000000;
-  align-self: center;
+
+
+#topo, #topo1 {
+    background-image: linear-gradient(var(--preto), var(--cinza-escuro));
+    padding: 20px 15px;
 }
-.grid-topo > h2 > span{
-    color:var(--ferrugem)
+
+#topo {
+    min-height: 550px;
 }
-#menu-topo ul{
-    display:flex;
-    list-style: none;
-    justify-content: space-evenly;
+
+#topo1 {
+    min-height: 280px;
+}
+
+.grid-topo {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 100%;
+    gap: 20px;
 }
-#menu-topo a{
-    font-size: 1.85rem; 
+
+
+#logoempresa {
+    text-align: center;
+}
+
+#logoempresa img {
+    width: 200px;
+    height: auto;
+}
+
+
+#menu-topo {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+#botaomenu {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    border: 2px solid var(--branco);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.linha {
+    display: block;
+    height: 3px;
+    background-color: var(--branco);
+    border-radius: 2px;
+}
+
+#aberturamenu {
+    display: none;
+}
+
+#menu-topo ul {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px 0;
+    gap: 0;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#menu-topo li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--cinza-escuro);
+}
+
+#menu-topo li:last-child {
+    border-bottom: none;
+}
+
+#menu-topo a {
+    display: block;
+    padding: 18px;
+    font-size: 1.3rem;
     font-weight: bold;
     font-family: var(--fonte-titulo);
     color: var(--branco);
     text-decoration: none;
-    padding-bottom: 5px;
+    transition: all 0.3s;
 }
 
-#menu-topo a:hover{
+#menu-topo a:hover {
     color: var(--ferrugem);
-   border-bottom: 1px solid var(--ferrugem);
+    background-color: rgba(255, 255, 255, 0.1);
 }
-#menu-topo .atual{
+
+#menu-topo .atual {
     color: var(--ferrugem);
-    border-bottom: 1px solid var(--ferrugem);
-}
-#info{
-    display: flex;
-    align-items: right ;
-    background-color: var(--ferrugem);
-    min-height: 370px;
-    padding: 20px 10px;
-}
-#info h1{
-    font-family: var(--fonte-texto1);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--branco);
-}
-#info h2{
-    font-family: var(--fonte-texto);
-    font-weight: 375;
-    color: var(--branco);
-}
-#rodapé {
-  background-color: var(--preto);
-  padding: 10px 0px;
-}
-
-.grid-rodape {
-  display: grid;
-  grid-template-columns: 1fr auto; 
-  align-items: center;            
-}
-
-#sociais {
-  display: flex;
-  justify-content: flex-end;
-  gap: 30px;
-  margin-right: 40px; 
-  margin-bottom: -30px; 
-}
-
-#sociais a img {
-  width: 60px;     
-  height: 60px;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-#predioempresa{
-display: flex;
-align-content: center;
-padding: 20px 10px;
-width: 900px;
-}
-#tratofeito{
-width: 850px;
-}
-#texto{
-    font-family: var(--fonte-titulo);
-    font-size: 1.875rem;
-    font-weight: 600;
-    padding: 50px;
-}
-.projetos{
-    display: flex;
-    justify-content: space-evenly;
-    align-items:center ;
-    margin: 10px 20px;
-}
-.botao-vejamais {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;       /* afasta de cima */
-  margin-bottom: 40px;
-}
-#vejamais{
-    display: flex;
-    justify-content: center;
-    padding: 12px 25px;
-   font-family: var(--fonte-texto);
-   font-weight: bold;
-   font-size: 2.5rem;
-    color: var(--branco);
-   text-decoration: none;
-   background-color: var(--preto);
-   border-radius: 20px;
-   align-self: center;
-   box-shadow: 0px 0px 4px var(--preto);
-   transition: all 0.2s ease-in-out;
-    display: inline-block;
-}
-#vejamais:hover {
-  background-color: var(--branco);
-  color: var(--preto);
-}
-#logo2{
-    padding: 30px;
-}
-#logoempresa img{
-    padding: 20px;
-}
-.area-interna{
-    min-height: 600px;
-    padding: 10px 20px;
-}
-.area-interna h3{
-    font-family: var(--fonte-titulo);
-    font-size: 2.5rem;
     font-weight: 900;
-    color:var(--ferrugem);
-    margin: 20px 0;
 }
-.area-interna p{
-    font-size: 1.5rem;
-    color:var(--preto);
-    line-height: 150%;
-    text-indent: 48px;
-    margin-bottom: 16px;
-    text-align: justify;
+
+#aberturamenu:checked ~ ul {
+    display: flex;
 }
-.area-interna .trabalhoduro{
-    width: 400px;
-    border: 5px solid var(--cinza-escuro);
-    border-radius:20px;
-    margin:8px;
-    float:left;
-}
-.area-interna .pedroempresa{
-    width: 400px;
-    border: 5px solid var(--ferrugem);
-    border-radius:20px;
-    margin:10px;
-    float:right;
-}
-.projetosimagens{
-     min-height: 600px;
-    padding: 10px 20px;
-}
-.projetosimagens h3{
-    font-family: var(--fonte-titulo);
-    font-size: 2.5rem;
-    font-weight: 900;
-    color:var(--ferrugem);
-    margin: 20px 0;
-}
-.projetosimagens p{
-    font-size: 1.5rem;
-    color:var(--preto);
-    line-height: 150%;
-    text-indent: 48px;
-    margin-bottom: 16px;
-    text-align: justify;
-}
-.projetosimagens h4{
+
+.grid-topo > h2 {
+    text-align: center;
     font-family: var(--fonte-titulo);
     font-size: 2rem;
     font-weight: 900;
-    color:var(--ferrugem);
+    color: var(--branco);
+    line-height: 1.2;
+    margin: 25px 0;
+    text-shadow: 4px 8px 10px #000000;
+    width: 100%;
+}
+
+.grid-topo > h2 > span {
+    color: var(--ferrugem);
+}
+
+#tratofeito {
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+#info {
+    background-color: var(--ferrugem);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#info .container {
+    padding: 0 15px;
+}
+
+#info h1 {
+    font-family: var(--fonte-texto1);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--branco);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#info h2 {
+    font-family: var(--fonte-texto);
+    font-weight: 375;
+    color: var(--branco);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.image-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#predioempresa {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+#nossosprojetos {
+    padding: 30px 20px;
+}
+
+#texto {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0 30px;
+}
+
+.projetos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 0 10px;
+}
+
+.projetos article {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projetos article img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.botao-vejamais {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0;
+}
+
+#vejamais {
+    padding: 12px 25px;
+    font-family: var(--fonte-texto);
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: var(--branco);
+    text-decoration: none;
+    background-color: var(--preto);
+    border-radius: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+#vejamais:hover {
+    background-color: var(--branco);
+    color: var(--preto);
+}
+
+
+.area-interna {
+    padding: 30px 20px;
+}
+
+.area-interna h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--ferrugem);
+    margin: 20px 0 30px;
+    text-align: center;
+}
+
+.area-interna p {
+    font-size: 1.2rem;
+    color: var(--preto);
+    line-height: 1.6;
+    text-indent: 40px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.area-interna .trabalhoduro,
+.area-interna .pedroempresa {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 15px;
+    margin: 20px 0;
+    display: block;
+}
+
+.area-interna .trabalhoduro {
+    border: 5px solid var(--cinza-escuro);
+}
+
+.area-interna .pedroempresa {
+    border: 5px solid var(--ferrugem);
+}
+
+
+.projetosimagens {
+    padding: 30px 20px;
+}
+
+.projetosimagens h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--ferrugem);
+    margin: 20px 0 30px;
+    text-align: center;
+}
+
+.projetosimagens p {
+    font-size: 1.2rem;
+    color: var(--preto);
+    line-height: 1.6;
+    text-indent: 40px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.projetosimagens h4 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--ferrugem);
+    margin: 25px 0;
+    text-align: center;
+}
+
+.projetos1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.projetos1 article {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projetos1 article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.lista {
+    font-family: var(--fonte-texto);
+    font-size: 1.2rem;
+    padding: 0 25px;
+    line-height: 1.6;
+    list-style-position: inside;
     margin: 20px 0;
 }
-.projetos1{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
+
+.lista li {
+    margin-bottom: 15px;
 }
-.lista{
-    font-family: var(--fonte-texto);
-    font-size: 1.5rem;
+
+
+#rodapé {
+    background-color: var(--preto);
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.grid-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+#logo2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#logo2 img {
+    width: 180px;
+    height: auto;
+}
+
+#sociais {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+}
+
+#sociais a img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+#sociais a:hover img {
+    transform: scale(1.1);
+}
+
+.area-contato {
+    margin: 30px auto; 
     padding: 20px;
-    gap:30px
+    max-width: 900px;
 }
-#projetos p{
-    font-family: var(--fonte-texto);
-    font-size: 1.5rem;
+
+@media screen and (min-width: 65px) and (max-width: 424px) {
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    #topo {
+        min-height: 500px;
+        padding: 15px 10px;
+    }
+    
+    #topo1 {
+        min-height: 250px;
+        padding: 15px 10px;
+    }
+    
+    #logoempresa img {
+        width: 350px;
+    }
+    
+    .grid-topo > h2 {
+        font-size: 1.8rem;
+        margin: 20px 0;
+    }
+    
+    #botaomenu {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #menu-topo a {
+        font-size: 1.2rem;
+        padding: 16px;
+    }
+    
+    #tratofeito {
+        width: 98%;
+    }
+    
+   
+    #info {
+        padding: 25px 15px;
+    }
+    
+    #info h1 {
+        font-size: 1.8rem;
+    }
+    
+    #info h2 {
+        font-size: 1rem;
+    }
+    
+    
+    #nossosprojetos {
+        padding: 25px 15px;
+    }
+    
+    #texto {
+        font-size: 1.8rem;
+        margin: 15px 0 25px;
+    }
+    
+    .projetos {
+        gap: 15px;
+        margin: 0 5px;
+    }
+    
+    .projetos article img {
+        height: 200px;
+    }
+    
+    #vejamais {
+        font-size: 1.6rem;
+        padding: 10px 20px;
+    }
+    
+ 
+    .area-interna, .projetosimagens {
+        padding: 25px 15px;
+    }
+    
+    .area-interna h3, .projetosimagens h3 {
+        font-size: 2rem;
+        margin: 15px 0 25px;
+    }
+    
+    .area-interna p, .projetosimagens p, .lista {
+        font-size: 1.1rem;
+        text-indent: 30px;
+    }
+    
+    .projetosimagens h4 {
+        font-size: 1.6rem;
+        margin: 20px 0;
+    }
+    
+    .projetos1 article img {
+        height: 180px;
+    }
+    
+ 
+    #rodapé {
+        padding: 30px 15px;
+    }
+    
+    #logo2 img {
+        width: 300px;
+    }
+    
+    #sociais {
+        gap: 25px;
+    }
+    
+    #sociais a img {
+        width: 45px;
+        height: 45px;
+    }
+}
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    #topo {
+        min-height: 500px;
+        padding: 15px 10px;
+    }
+    
+    #topo1 {
+        min-height: 250px;
+        padding: 15px 10px;
+    }
+    
+    #logoempresa img {
+        width: 350px;
+    }
+    
+    .grid-topo > h2 {
+        font-size: 1.8rem;
+        margin: 20px 0;
+    }
+    
+    #botaomenu {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #menu-topo a {
+        font-size: 1.2rem;
+        padding: 16px;
+    }
+    
+    #tratofeito {
+        width: 98%;
+    }
+    
+    
+    #info {
+        padding: 25px 15px;
+    }
+    
+    #info h1 {
+        font-size: 1.8rem;
+    }
+    
+    #info h2 {
+        font-size: 1rem;
+    }
+    
+  
+    #nossosprojetos {
+        padding: 25px 15px;
+    }
+    
+    #texto {
+        font-size: 1.8rem;
+        margin: 15px 0 25px;
+    }
+    
+    .projetos {
+        gap: 15px;
+        margin: 0 5px;
+    }
+    
+    .projetos article img {
+        height: 200px;
+    }
+    
+    #vejamais {
+        font-size: 1.6rem;
+        padding: 10px 20px;
+    }
+    
+   
+    .area-interna, .projetosimagens {
+        padding: 25px 15px;
+    }
+    
+    .area-interna h3, .projetosimagens h3 {
+        font-size: 2rem;
+        margin: 15px 0 25px;
+    }
+    
+    .area-interna p, .projetosimagens p, .lista {
+        font-size: 1.1rem;
+        text-indent: 30px;
+    }
+    
+    .projetosimagens h4 {
+        font-size: 1.6rem;
+        margin: 20px 0;
+    }
+    
+    .projetos1 article img {
+        height: 180px;
+    }
+    
+ 
+    #rodapé {
+        padding: 30px 15px;
+    }
+    
+    #logo2 img {
+        width: 300px;
+    }
+    
+    #sociais {
+        gap: 25px;
+    }
+    
+    #sociais a img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    #topo {
+        min-height: 550px;
+    }
+    
+    #topo1 {
+        min-height: 320px;
+    }
+    
+ 
+    .grid-topo {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    #logoempresa {
+        width: auto;
+        flex: 0 0 auto;
+    }
+    
+    #logoempresa img {
+        width: 350px;
+    }
+    
+    
+    #botaomenu {
+        display: none;
+    }
+    
+    #menu-topo {
+        width: auto;
+        margin-top: 0;
+    }
+    
+    #menu-topo ul {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+        gap: 25px;
+        box-shadow: none;
+        width: auto;
+    }
+    
+    #menu-topo li {
+        width: auto;
+        border-bottom: none;
+    }
+    
+    #menu-topo a {
+        padding: 8px 12px;
+        font-size: 1.3rem;
+        border-bottom: 2px solid transparent;
+    }
+    
+    #menu-topo a:hover {
+        background-color: transparent;
+        border-bottom: 2px solid var(--ferrugem);
+    }
+    
+    #menu-topo .atual {
+        border-bottom: 2px solid var(--ferrugem);
+    }
+    
+    .grid-topo > h2 {
+        font-size: 2.5rem;
+        margin: 35px 0;
+        order: 3;
+        width: 100%;
+    }
+    
+    #tratofeito {
+        width: 90%;
+        order: 4;
+    }
+    
+  
+    #info {
+        flex-direction: row;
+        align-items: center;
+        padding: 40px 30px;
+    }
+    
+    #info .container {
+        flex: 1;
+        padding-right: 40px;
+    }
+    
+    #info h1 {
+        font-size: 2.2rem;
+        text-align: left;
+    }
+    
+    #info h2 {
+        font-size: 1.2rem;
+    }
+    
+    .image-container {
+        flex: 1;
+        margin-top: 0;
+    }
+    
+    #predioempresa {
+        max-width: 100%;
+    }
+    
+    
+    .projetos, .projetos1 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin: 0 15px;
+    }
+    
+    .projetos article img, .projetos1 article img {
+        height: 200px;
+    }
+    
+    #vejamais {
+        font-size: 2rem;
+        padding: 14px 30px;
+    }
+    
+    
+    .area-interna, .projetosimagens {
+        padding: 40px 30px;
+    }
+    
+    .area-interna h3, .projetosimagens h3 {
+        font-size: 2.5rem;
+    }
+    
+    .area-interna p, .projetosimagens p, .lista {
+        font-size: 1.3rem;
+    }
+    
+    .projetosimagens h4 {
+        font-size: 2rem;
+    }
+    
+    .projetos1 article img {
+        height: 180px;
+    }
+    
+    
+    #rodapé {
+        padding: 40px 30px;
+        text-align: left;
+    }
+    
+    .grid-rodape {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #logo2 {
+        width: auto;
+        justify-content: flex-start;
+    }
+    
+    #logo2 img {
+        width: 300px;
+    }
+    
+    #sociais {
+        width: auto;
+        gap: 35px;
+    }
+    
+    #sociais a img {
+        width: 45.5px;
+        height: 45.5px;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        padding: 0 40px;
+    }
+    
+    #topo {
+        min-height: 600px;
+        padding: 25px 20px;
+    }
+    
+    #topo1 {
+        min-height: 350px;
+        padding: 25px 20px;
+    }
+    
+   
+    #logoempresa img {
+        width: 350px;
+    }
+    
+
+    #menu-topo ul {
+        gap: 40px;
+    }
+    
+    #menu-topo a {
+        font-size: 1.4rem;
+        padding: 10px 15px;
+    }
+    
+    .grid-topo > h2 {
+        font-size: 3.2rem;
+        margin: 45px 0;
+    }
+    
+    #tratofeito {
+        width: 850px;
+        max-width: 85%;
+    }
+    
+    
+    #info {
+        min-height: 400px;
+        padding: 50px 40px;
+    }
+    
+    #info .container {
+        padding-right: 60px;
+    }
+    
+    #info h1 {
+        font-size: 2.5rem;
+    }
+    
+    #info h2 {
+        font-size: 1.3rem;
+    }
+    
+    #predioempresa {
+        max-width: 900px;
+    }
+    
+   
+    #nossosprojetos {
+        padding: 50px 40px;
+    }
+    
+    #texto {
+        font-size: 2.2rem;
+        margin: 30px 0 40px;
+    }
+    
+    .projetos {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin: 0 20px;
+    }
+    
+    .projetos article {
+        transition: transform 0.3s;
+    }
+    
+    .projetos article:hover {
+        transform: translateY(-8px);
+    }
+    
+    .projetos article img {
+        height: 250px;
+    }
+    
+    .botao-vejamais {
+        margin: 50px 0;
+    }
+    
+    #vejamais {
+        padding: 16px 35px;
+        font-size: 2.2rem;
+    }
+    
+
+    .area-interna, .projetosimagens {
+        min-height: 650px;
+        padding: 50px 40px;
+    }
+    
+    .area-interna h3, .projetosimagens h3 {
+        font-size: 2.8rem;
+        margin: 30px 0 40px;
+    }
+    
+    .area-interna p, .projetosimagens p {
+        font-size: 1.5rem;
+        line-height: 1.7;
+        text-indent: 50px;
+        margin-bottom: 25px;
+    }
+    
+    .area-interna .trabalhoduro,
+    .area-interna .pedroempresa {
+        width: 450px;
+        max-width: 45%;
+        margin: 15px 25px;
+    }
+    
+    .area-interna .trabalhoduro {
+        float: left;
+        margin-right: 30px;
+        margin-bottom: 15px;
+    }
+    
+    .area-interna .pedroempresa {
+        float: right;
+        margin-left: 30px;
+        margin-bottom: 15px;
+    }
+    
+    .projetosimagens h4 {
+        font-size: 2.2rem;
+        margin: 35px 0;
+    }
+    
+    .projetos1 {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        margin: 35px 0;
+    }
+    
+    .projetos1 article img {
+        height: 220px;
+        transition: transform 0.5s;
+    }
+    
+    .projetos1 article:hover img {
+        transform: scale(1.05);
+    }
+    
+    .lista {
+        font-size: 1.4rem;
+        padding: 0 40px;
+        margin: 30px 0;
+    }
+    
+    .lista li {
+        margin-bottom: 20px;
+    }
+    
+  
+    #rodapé {
+        padding: 50px 40px;
+    }
+    
+    #logo2 img {
+        width: 350px;
+    }
+    
+    #sociais {
+        gap: 40px;
+    }
+    
+    #sociais a img {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        padding: 0;
+    }
+    
+    #logoempresa img {
+        width: 350px;
+    }
+    
+    .grid-topo > h2 {
+        font-size: 3.5rem;
+    }
+    
+    #tratofeito {
+        width: 850px;
+    }
+    
+    #logo2 img {
+        width: 400px;
+    }
 }

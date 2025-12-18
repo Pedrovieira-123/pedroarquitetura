@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Vieira | Arquitetura e Interiores - O melhor escritório de arquitetura da região</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Imagens/Flavicon.png">
+</head>
+<body>
+     <header id="topo1">
+    <div class="container grid-topo">
+        <h1 id="logoempresa"><a href="index.html"><img src="Imagens/Logo 1.png" alt="Pedro Vieira Arquitetura"></a></h1>
+        
+        <nav id="menu-topo">
+            <label id="botaomenu" for="aberturamenu">
+                <div class="linha"></div>
+                <div class="linha"></div>
+                <div class="linha"></div>
+            </label>
+            <input type="checkbox" id="aberturamenu">
+            <ul>
+                <li><a href="index.html">PÁGINA INICIAL</a></li>
+                <li><a href="sobrenós.html" >SOBRE NÓS</a></li>
+                <li><a href="projetos.html" >PROJETOS</a></li>
+                <li><a href="contato.html" class="atual">CONTATO</a></li>
+            </ul>
+        </nav>
+        
+
+    </div>
+</header>
+    <main id="conteudo">
+        <section class="container area-contato">
+            <h2>Entre em Contato</h2>
+            <p>Preencha o formulário abaixo para solicitar um orçamento ou tirar suas dúvidas sobre nossos serviços de arquitetura.</p>
+            
+            <form id="formContato" action="#" method="POST">
+     
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+                </div>
+                
+          
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+                
+       
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+                </div>
+                
+          
+                <div class="form-group">
+                    <label for="servico">Tipo de Serviço:</label>
+                    <select id="servico" name="servico" required>
+                        <option value="">Selecione...</option>
+                        <option value="residencial">Projeto Residencial</option>
+                        <option value="comercial">Projeto Comercial</option>
+                        <option value="interiores">Design de Interiores</option>
+                        <option value="reforma">Reforma</option>
+                        <option value="consultoria">Consultoria</option>
+                    </select>
+                </div>
+                
+       
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Descreva seu projeto ou dúvida..."></textarea>
+                </div>
+                
+         
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Desejo receber novidades e dicas de arquitetura por e-mail</label>
+                </div>
+                
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer id="rodapé">
+    <div class="container grid-rodape">
+        <section id="logo2">
+            <h1><a href="index.html"><img src="Imagens/Logo 2.png" alt="Pedro Vieira Arquitetura e Interiores"></a></h1>
+        </section>
+        <div id="sociais">
+            <a href="https://www.instagram.com.br"><img src="Imagens/Vector.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com.br"><img src="Imagens/Vector (1).png" alt="Facebook"></a>
+            <a href="https://web.whatsapp.com"><img src="Imagens/Vector (2).png" alt="WhatsApp"></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
